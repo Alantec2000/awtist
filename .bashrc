@@ -147,10 +147,6 @@ gopy() {
         fi
 }
 
-jenkins() {
-	java -jar ~/jenkins-cli.jar -s http://deploy.uplexis.com.br/
-}
-
 alias gcp='git cherry-pick';
 alias glog='git log';
 alias gc='git commit';
@@ -165,5 +161,4 @@ alias gasha='gadda && git stash';
 alias gashop='git stash apply stash@{0}';
 alias phpTo7.3="sudo a2dismod php5.6 && sudo a2enmod php7.3 && sudo service apache2 restart && sudo update-alternatives --set php /usr/bin/php7.3"
 alias phpTo5.6="sudo a2dismod php7.3 && sudo a2enmod php5.6 && sudo service apache2 restart && sudo update-alternatives --set php /usr/bin/php5.6"
-alias sshUpmatch='ssh -i ~/Downloads/uplexis-upmatch.pem ubuntu@172.16.5.23'
 zsh
