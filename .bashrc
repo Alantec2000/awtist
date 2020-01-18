@@ -33,25 +33,6 @@ isGitRepository() {
 
 }
 
-passet() {
-	diretorioAtual=$(pwd);
-	cd $diretorioAtual/vendor/packages/upminer-assets/;
-	if isGitRepository; then
-		git reset --hard origin/$(gbname)
-		git fetch;
-		git checkout $1;
-		git pull origin $1;
-		git reset --hard origin/$1;
-		cd $diretorioAtual
-		php artisan vendor:publish --tag=resources --force;
-		php artisan vendor:publish --tag=public --force;
-		gulp;
-		php artisan view:clear;
-		#sudo chown aandrade:www-data $diretorioAtual -R;
-		composer dump-autoload;
-	fi
-}
-
 gbname() {
 	echo $(git branch | grep '*' | cut -c3-);
 }
